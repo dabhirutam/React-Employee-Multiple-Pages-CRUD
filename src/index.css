@@ -1,0 +1,24 @@
+
+.form-control{
+    font-size: 1.1rem !important;
+    border: 2px solid #d4d4d47c !important;
+    &:focus{
+        border: 2px solid #000 !important;
+        box-shadow: none !important;
+    }
+}
+
+.form-label{
+    font-size: 1.1rem !important;
+    font-weight: 600;
+}
+
+.table-primary{
+    --bs-table-bg: #0b5ed7 !important;
+    --bs-table-color: #fff !important;
+}
+
+.list-group-item{
+    background-color: transparent !important;
+    border: none !important;
+}
