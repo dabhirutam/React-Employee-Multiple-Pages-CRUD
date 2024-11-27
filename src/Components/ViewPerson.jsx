@@ -1,6 +1,4 @@
 import { Container, Row, Col, ListGroup, Navbar } from "react-bootstrap";
-import personMale from "../images/person-male.png"
-import personFemale from "../images/person-female.png"
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { getDataLS } from "../Services/GetDataLS";
@@ -15,16 +13,14 @@ const ViewPerson = () => {
         lname: "",
         age: "",
         department: "",
-        position : "",
+        position: "",
         salary: "",
         email: "",
     });
-    let person;
 
     useEffect(() => {
         let data = getDataLS().find(emp => emp.id == id);
         setSingleData(data);
-        singleData.gender == 'Male' ? person = 'personMale' : person = 'personFemail';
     }, [])
 
     console.log(singleData);
@@ -52,10 +48,7 @@ const ViewPerson = () => {
                     <Col md={6} className="p-4 mt-5 bg-light rounded shadow mx-auto">
                         <div className="d-flex align-items-center">
                             <Col md={6}>
-                                {
-
-                                }
-                                <img style={{ height: '250px' }} src={singleData.gender == 'Male' ? personMale : personFemale} alt="" />
+                                <img style={{ height: '300px' }} src={logo} alt="" />
                             </Col>
                             <Col md={6}>
                                 <ListGroup>
@@ -64,24 +57,28 @@ const ViewPerson = () => {
                                         &nbsp; {singleData.fname + ' ' + singleData.lname}
                                     </ListGroup.Item>
                                     <ListGroup.Item>
-                                        <span className="fw-medium text-black">Email :</span>
-                                        &nbsp; {singleData.email}
-                                    </ListGroup.Item>
-                                    <ListGroup.Item>
-                                        <span className="fw-medium text-black">Contact :</span>
-                                        &nbsp; {singleData.contact}
-                                    </ListGroup.Item>
-                                    <ListGroup.Item>
-                                        <span className="fw-medium text-black">Gender :</span>
-                                        &nbsp; {singleData.gender}
-                                    </ListGroup.Item>
-                                    <ListGroup.Item>
-                                        <span className="fw-medium text-black">Desiganation :</span>
-                                        &nbsp; {singleData.designation}
-                                    </ListGroup.Item>
-                                    <ListGroup.Item>
                                         <span className="fw-medium text-black">Employee ID :</span>
                                         &nbsp; {singleData.id}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <span className="fw-medium text-black">Age :</span>
+                                        &nbsp; {singleData.age}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <span className="fw-medium text-black">Department :</span>
+                                        &nbsp; {singleData.department}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <span className="fw-medium text-black">Position :</span>
+                                        &nbsp; {singleData.position}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <span className="fw-medium text-black">Salary :</span>
+                                        &nbsp; {singleData.salary}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <span className="fw-medium text-black">Email :</span>
+                                        &nbsp; {singleData.email}
                                     </ListGroup.Item>
                                 </ListGroup>
                             </Col>
